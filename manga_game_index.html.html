@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/DD_manga_style.css">
+</head>
+
+<body>
+
+    <title> Guess the Manga </title>
+
+    <center>
+        <h1>
+            Guess the Manga
+        </h1>
+    </center>
+
+    <element id="submitPanel">
+        <input list="titleOptions" type="text" id="title-box"></input>
+        <datalist id="titleOptions">
+            
+        </datalist>
+
+        <button id="submitButton"> <!----Submit --->
+            
+        </button>
+
+        <h2>
+            Settings:
+        </h2>
+
+        <label for="countSlider">
+            Number of Manga: <output id="sliderValue">100</output>
+        </label>
+        <br>
+        <input
+            type="range" 
+            id="countSlider" 
+            min="50"
+            max="500"
+            value="100"
+            step="50"/> 
+        
+        <br>
+
+        <label for="englishCheckBox">
+            Use English Titles
+        </label>
+        <input type="checkbox" id="englishCheckBox" checked>
+
+        <br>
+
+        <element class="answers-category">
+            Incorrect
+        </element>
+        <element class="answers-category close">
+            Close
+        </element>
+        <element class="answers-category correct">
+            Correct
+        </element>
+
+        <br>
+        <br>
+
+        <h2>
+            Closeness Ranges:
+        </h2>
+        <ul>
+            <li>
+                Popularity: 10
+            </li>
+            <li>
+                Mean Score: 0.25
+            </li>
+            <li>
+                Volumes: 5
+            </li>
+            <li>
+                Start Year: 5
+            </li>
+            <li>
+                A Demographic in common
+            </li>
+        </ul>
+        
+    </element>
+
+
+    <element id="answers-panel">
+    
+    </element>
+
+    <script src="js/DD_manga_game_prog.js"></script>
+</body>
+
+    
+</html>

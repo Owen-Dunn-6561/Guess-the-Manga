@@ -4,7 +4,8 @@
 // There's a bug for entries with identical titles (EX: manga -> light novel)
 // For this and other reasons, see if we can tie choices to ID. Also, including signifier of media type may be good.
 // There should be a way to do this with "value" as the id and with the text being title.
-
+const backendAddress = "http://10.0.4.66:8081"
+//const backendAddress = "http://127.0.0.1:8000"
 
 const answersPanel = document.getElementById('answers-panel');
 const submitButton = document.getElementById('submitButton');
@@ -23,7 +24,7 @@ const keyList = ["id", "title", "popularity", "mean_score", "num_volumes", "time
 const quantKeyList = ["popularity", "mean_score", "num_volumes", "timeline"];
 const closeRangeList = [10, 0.25, 5, 5];
 
-let getData = fetch('http://127.0.0.1:8000/titles')
+let getData = fetch(backendAddress + '/titles')
     .then((response) => {
         if(response.ok){
             return response.json();
@@ -216,7 +217,7 @@ countSlider.addEventListener("change", function() {changeTitleList(false)});
 englishCheckBox.addEventListener("change", function() {changeTitleList(true)});
 
 function getSingle(idNum) {
-    return fetch('http://127.0.0.1:8000/info,id=' + String(idNum))
+    return fetch(backendAddress + '/info,id=' + String(idNum))
     .then((response) => {
         if(response.ok){
             return response.json()
@@ -242,7 +243,7 @@ function demoSet(inDict) {
 }
 
 function endGame() {
-    return fetch('http://127.0.0.1:8000/picture,id=' + String(solutionDict["id"]))
+    return fetch(backendAddress + '/picture,id=' + String(solutionDict["id"]))
     .then((response) => {
         if(response.ok) {
             return response.json()

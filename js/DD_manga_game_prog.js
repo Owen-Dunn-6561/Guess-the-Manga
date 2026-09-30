@@ -120,17 +120,7 @@ submitButton.addEventListener("click", async function() {
     if(currSelectionId == solutionId) {
         nameCat.classList.add("correct");
         turnCount = 1;
-
-        let solutionImage = document.createElement('img', 'src=');
-        solutionImage.src = String((await Promise.resolve(endGame()))["value"])
-        solutionImage.classList.add('end-img')
-        let overlay = document.createElement('element');
-        overlay.id = 'overlay';
-        overlay.classList.add('on');
-        document.body.appendChild(overlay);
-        overlay.appendChild(solutionImage);
-        // Add Title
-        // Add Retry Button
+        endGame();
     }
 
     currAnswerBox.appendChild(nameCat);
@@ -249,8 +239,9 @@ function demoSet(inDict) {
     return finalSet;
 }
 
-function endGame() {
-    return fetch(backendAddress + '/picture,id=' + String(solutionDict["id"]))
+async function endGame() {
+
+    imageLink = fetch(backendAddress + '/picture,id=' + String(solutionDict["id"]))
     .then((response) => {
         if(response.ok) {
             return response.json()
@@ -261,6 +252,17 @@ function endGame() {
     .catch((error) => {
         console.error(error)
     });
+
+    let solutionImage = document.createElement('img', 'src=');
+    solutionImage.src = String((await Promise.resolve(imageLink))["value"])
+    solutionImage.classList.add('end-img')
+    let overlay = document.createElement('element');
+    overlay.id = 'overlay';
+    overlay.classList.add('on');
+    document.body.appendChild(overlay);
+    overlay.appendChild(solutionImage);
+    // Add Title
+    // Add Retry Button
 }
 
 countSlider.addEventListener("change", function() {changeTitleList(false)});

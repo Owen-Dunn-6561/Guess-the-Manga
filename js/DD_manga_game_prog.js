@@ -1,11 +1,15 @@
-// Get Data from Python backend, put it in dictionary
-// I'll do the truth/closeness calculations in python as well
 
 // There's a bug for entries with identical titles (EX: manga -> light novel)
 // For this and other reasons, see if we can tie choices to ID. Also, including signifier of media type may be good.
 // There should be a way to do this with "value" as the id and with the text being title.
+
+
+// To add:
+// More stuff on victory screen (See if I can re-use fade-in animation here)
+// Retry button
+// Background (Something blue-ish? Need to contrast)
+// More decoration (Custom slider and Title? Make it look nicer)
 const backendAddress = "https://deltawdorko.pythonanywhere.com"
-//const backendAddress = ""https://10.0.4.66:8081""
 
 const answersPanel = document.getElementById('answers-panel');
 const submitButton = document.getElementById('submitButton');
@@ -112,6 +116,7 @@ submitButton.addEventListener("click", async function() {
     nameCat.className = "answers-category";
     nameCat.textContent = currSelectionTitle
 
+    // Try and make this a function so I can use it for fails? May need to handle async differently.
     if(currSelectionId == solutionId) {
         nameCat.classList.add("correct");
         turnCount = 1;
@@ -124,6 +129,8 @@ submitButton.addEventListener("click", async function() {
         overlay.classList.add('on');
         document.body.appendChild(overlay);
         overlay.appendChild(solutionImage);
+        // Add Title
+        // Add Retry Button
     }
 
     currAnswerBox.appendChild(nameCat);
@@ -173,7 +180,10 @@ submitButton.addEventListener("click", async function() {
         answerText.classList.add('category-text');
         let compareArrow = document.createElement('div');
         answerCat.className = "answers-category";
-
+        /*
+        This is just for presentation. The Popularity one is since a lower number 
+        represents "higher" popularity. Therefore, I reverse the arrow.
+        */
         let descriptor = "Category"
         switch(key) {
             case "num_volumes":
@@ -212,9 +222,6 @@ submitButton.addEventListener("click", async function() {
         answerCat.appendChild(answerText);
     }
 })
-
-countSlider.addEventListener("change", function() {changeTitleList(false)});
-englishCheckBox.addEventListener("change", function() {changeTitleList(true)});
 
 function getSingle(idNum) {
     return fetch(backendAddress + '/info,id=' + String(idNum))
@@ -256,7 +263,8 @@ function endGame() {
     });
 }
 
-
+countSlider.addEventListener("change", function() {changeTitleList(false)});
+englishCheckBox.addEventListener("change", function() {changeTitleList(true)});
 
 function changeTitleList(checkBox) {
     let newCount = countSlider.value;

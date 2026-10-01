@@ -91,13 +91,9 @@ h2 {
     p {display: block;}
 }
 
-.correct {
-    background-color: rgb(8, 155, 8);
-}
+.correct {background-color: rgb(8, 155, 8);}
 
-.close {
-    background-color: rgb(187, 187, 11);
-}
+.close {background-color: rgb(187, 187, 11);}
 
 div.triangle-up {
     width: 0;
@@ -259,15 +255,27 @@ button#submitButton {
     p {display: block;}
     }
 
+    .correct {background-color: rgb(8, 155, 8);}
+
+    .close {background-color: rgb(187, 187, 11);}
+
     .end-img {
-    /*
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    */
-    
     align-self: center;
     animation-name: img-appear;
     animation-duration: 3s;
-}
+    }
+
+    turn-counter {
+        height: 20px;
+        width: 100%;
+
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        
+        background-color: lightblue;
+        color: white;
+
+        font-size: larger;
+        text-align: center;
+    }
 }

@@ -49,8 +49,6 @@ h2 {
 #answers-panel {
     width: 75%;
     height: 100%;
-
-    float: right;
 }
 
 .answers-box {
@@ -59,15 +57,14 @@ h2 {
 }
 
 #submitPanel {
-    max-width: 25%;
-    width: 25%;
+    max-width: 100%;
+    width: 100%;
 
     /*background-color: rgba(95, 0, 95, 0.75);*/
     
     border-radius: 5px;
 
     display: block;
-    float: left;
 }
 
 /* Defaults to incorrect grey color */
@@ -221,21 +218,4 @@ button#submitButton {
     background-size: cover;
 
     cursor: pointer;
-}
-
-@media (max-width: 600px) {
-    #answers-panel {
-        width: 100%;
-    }
-
-    #submitPanel {
-    max-width: 100%;
-    width: 100%;
-
-    /*background-color: rgba(95, 0, 95, 0.75);*/
-    
-    border-radius: 5px;
-
-    display: block;
-    }
 }

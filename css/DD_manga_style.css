@@ -266,11 +266,12 @@ button#submitButton {
     }
 
     turn-counter {
-        height: 20px;
+        height: 40px;
         width: 100%;
 
-        border-top-left-radius: 50%;
-        border-top-right-radius: 50%;
+        border-top-left-radius: 10%;
+        border-top-right-radius: 10%;
+        border-bottom-left-radius: 0%;
         
         background-color: lightblue;
         color: white;

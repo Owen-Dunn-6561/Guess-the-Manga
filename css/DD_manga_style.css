@@ -236,7 +236,7 @@ button#submitButton {
     }
 
     .answers-category {
-    width: 30%;
+    width: 25%;
     min-height: 40px;
     
     overflow: hidden;
@@ -244,7 +244,7 @@ button#submitButton {
     text-overflow: ellipsis;
     margin-right: 3px;
     border-radius: 10px;
-    padding: 5px;
+    padding: 3px;
     
     float: left;
 
@@ -269,6 +269,9 @@ button#submitButton {
         height: 40px;
         width: 100%;
 
+        float: none;
+
+        padding-top: 10px;
         border-top-left-radius: 10%;
         border-top-right-radius: 10%;
         border-bottom-left-radius: 0%;
@@ -278,5 +281,6 @@ button#submitButton {
 
         font-size: larger;
         text-align: center;
+        line-height: 40px;
     }
 }

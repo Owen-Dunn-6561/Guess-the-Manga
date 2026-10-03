@@ -219,6 +219,10 @@ button#submitButton {
     cursor: pointer;
 }
 
+button#submitButton:hover {
+    background-image: url("../images/GoButton-hover.png");
+}
+
 @media (max-width: 600px) {
     #answers-panel {
         width: 100%;
@@ -236,13 +240,13 @@ button#submitButton {
     }
 
     .answers-category {
-    width: 32%;
+    width: 31%;
     min-height: 40px;
     
-    overflow: normal;
-    white-space: nowrap;
+    overflow: hidden;
+    white-space: wrap;
     /*text-overflow: ellipsis;*/
-    margin-right: 1%;
+    margin-right: 0.8%;
     border-radius: 10px;
     padding: 3px;
     
@@ -266,7 +270,7 @@ button#submitButton {
     }
 
     turn-counter {
-        height: 40px;
+        height: 20px;
         width: 100%;
 
         padding-top: 10px;
@@ -279,6 +283,6 @@ button#submitButton {
 
         font-size: larger;
         text-align: center;
-        line-height: 40px;
+        line-height: 10px;
     }
 }

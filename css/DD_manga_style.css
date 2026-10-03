@@ -239,7 +239,7 @@ button#submitButton {
     width: 30%;
     min-height: 40px;
     
-    overflow: hidden;
+    overflow: normal;
     white-space: nowrap;
     /*text-overflow: ellipsis;*/
     margin-right: 3px;
@@ -268,8 +268,6 @@ button#submitButton {
     turn-counter {
         height: 40px;
         width: 100%;
-
-        float: none;
 
         padding-top: 10px;
         border-top-left-radius: 10%;

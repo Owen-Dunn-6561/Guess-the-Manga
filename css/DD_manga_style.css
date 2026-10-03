@@ -236,13 +236,13 @@ button#submitButton {
     }
 
     .answers-category {
-    width: 30%;
+    width: 32%;
     min-height: 40px;
     
     overflow: normal;
     white-space: nowrap;
     /*text-overflow: ellipsis;*/
-    margin-right: 3px;
+    margin-right: 1%;
     border-radius: 10px;
     padding: 3px;
     
@@ -270,8 +270,8 @@ button#submitButton {
         width: 100%;
 
         padding-top: 10px;
-        border-top-left-radius: 10%;
-        border-top-right-radius: 10%;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
         border-bottom-left-radius: 0%;
         
         background-color: lightblue;

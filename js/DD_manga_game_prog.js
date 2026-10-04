@@ -38,7 +38,7 @@ let getData = fetch(backendAddress + '/titles')
     })
     .then((data) => {
         
-        for(let i = 1; i <= countSlider.max; i++) {
+        for(let i = 1; i <= Number(countSlider.max); i++) {
             idList[i - 1] = data[i]["id"];
             titleList[i - 1] = data[i]["title"];
             enTitleList[i - 1] = data[i]["en"]
@@ -269,7 +269,7 @@ countSlider.addEventListener("change", function() {changeTitleList(false)});
 englishCheckBox.addEventListener("change", function() {changeTitleList(true)});
 
 function changeTitleList(checkBox) {
-    let newCount = countSlider.value;
+    let newCount = Number(countSlider.value);
     let additionStart = mangaCount;
     
     if(checkBox) {

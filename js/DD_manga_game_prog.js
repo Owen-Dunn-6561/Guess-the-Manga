@@ -45,7 +45,7 @@ let getData = fetch(backendAddress + '/titles')
             let option = document.createElement('option');
             if(i >= mangaCount) {continue;}
             
-            if(englishCheckBox.checked && data[i]["en"] != "") {
+            if(englishCheckBox.checked && data[i]["en"].slice(0,2) != " (") {
                 option.value = data[i]["en"];
             } else {
                 option.value = data[i]["title"];

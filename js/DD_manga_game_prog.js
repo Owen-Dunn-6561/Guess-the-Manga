@@ -41,11 +41,11 @@ let getData = fetch(backendAddress + '/titles')
         for(let i = 1; i <= Number(countSlider.max); i++) {
             idList[i - 1] = data[i]["id"];
             titleList[i - 1] = data[i]["title"];
-            enTitleList[i - 1] = data[i]["en"]
+            if(data[i]["en"].slice(0,2) != " (") {enTitleList[i - 1] = data[i]["en"]}
             let option = document.createElement('option');
             if(i >= mangaCount) {continue;}
             
-            if(englishCheckBox.checked && data[i]["en"].slice(0,2) != " (") {
+            if(englishCheckBox.checked && data[i]["en"].slice(0,2) != null) {
                 option.value = data[i]["en"];
             } else {
                 option.value = data[i]["title"];

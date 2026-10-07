@@ -265,6 +265,8 @@ button#submitButton:hover {
 
     .end-img {
     align-self: center;
+    justify-content: center;
+    right: 40%;
     animation-name: img-appear;
     animation-duration: 3s;
     }

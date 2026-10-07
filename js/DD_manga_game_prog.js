@@ -269,17 +269,16 @@ countSlider.addEventListener("change", function() {changeTitleList(false)});
 englishCheckBox.addEventListener("change", function() {changeTitleList(true)});
 
 function changeTitleList(checkBox) {
-    let newCount = Number(countSlider.value);
-    let additionStart = mangaCount;
+    let newCount = countSlider.value;
     
     if(checkBox) {
         while(titleOptions.children.length != 0) {
             titleOptions.removeChild(titleOptions.lastChild)
         }
-        additionStart = 0
+        mangaCount = 0
     }
 
-    if(newCount > mangaCount || checkBox) {
+    if(newCount > mangaCount) {
         for(let i = additionStart; i < newCount; i++) {
             let option = document.createElement('option');
             if(englishCheckBox.checked && enTitleList[i] != undefined) {

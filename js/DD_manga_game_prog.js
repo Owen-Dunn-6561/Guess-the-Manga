@@ -279,7 +279,7 @@ function changeTitleList(checkBox) {
     }
 
     if(newCount > mangaCount) {
-        for(let i = additionStart; i < newCount; i++) {
+        for(let i = mangaCount; i < newCount; i++) {
             let option = document.createElement('option');
             if(englishCheckBox.checked && enTitleList[i] != undefined) {
                 option.value = enTitleList[i];
